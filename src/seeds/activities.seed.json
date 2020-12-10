@@ -1,0 +1,52 @@
+{ 
+  "data": [
+    {
+        "_id": "ACT001",
+        "approvalStatus": "APPROVED",
+        "name": "Ice skating",
+        "description": "We offer great courses in Ice Skating Lessons & Ice Hockey Lessons.",
+        "priceRating": 0,
+        "telephone": "01234567890",
+        "theme": 1,
+        "coords": [52.406780, -1.518082],
+        "foodMenuUrl": "site.com/url",
+        "hasGlutenFreeOptions": true,
+        "hasVeganOptions": true,
+        "hasWheelchairAccess": true,
+        "hasBabyChangingFacilities": true,
+        "activityLevel": 0
+      },
+      {
+        "_id": "ACT002",
+        "approvalStatus": "APPROVED",
+        "name": "Allesley Pitch and Putt",
+        "description": "Set in well-maintained parkland. Allesley offers a great day out for the family.",
+        "priceRating": 0,
+        "telephone": "01234567890",
+        "theme": 1,
+        "coords": [52.420184, -1.557579],
+        "foodMenuUrl": "site.com/url",
+        "hasGlutenFreeOptions": true,
+        "hasVeganOptions": true,
+        "hasWheelchairAccess": true,
+        "hasBabyChangingFacilities": true,
+        "activityLevel": 0
+      },
+      {
+        "_id": "ACT003",
+        "approvalStatus": "APPROVED",
+        "name": "The Wave, water park",
+        "description": "The UK’s newest indoor waterpark is making a splash in the heart of Coventry.",
+        "priceRating": 0,
+        "telephone": "024 7625 2500",
+        "theme": 1,
+        "coords": [52.405491, -1.510695],
+        "foodMenuUrl": "site.com/url",
+        "hasGlutenFreeOptions": true,
+        "hasVeganOptions": true,
+        "hasWheelchairAccess": true,
+        "hasBabyChangingFacilities": true,
+        "activityLevel": 0
+      }
+  ]
+}

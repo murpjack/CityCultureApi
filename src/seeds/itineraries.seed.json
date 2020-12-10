@@ -1,0 +1,38 @@
+{ 
+  "data": [
+{
+    "_id": "ITN001",
+    "approvalStatus": "APPROVED",
+    "name": "Romatic",
+    "slug": "romantic",
+    "description": "Take him or her out for a night of excitement in the city.",
+    "priceRating": 0,
+    "dinerId": "DNR001",
+    "activityId": "ACT001",
+    "adviceId": "ADV001",
+    "createdBy": "Jack"
+  }, {
+    "_id": "ITN002",
+    "approvalStatus": "APPROVED",
+    "name": "Casual Coffee",
+    "slug": "casual",
+    "description": "Enjoy an cafe date in the park around lunchtime.",
+    "priceRating": 1,
+    "dinerId": "DNR002",
+    "activityId": "ACT002",
+    "adviceId": "ADV002",
+    "createdBy": "Jack"
+  }, {
+    "_id": "ITN003",
+    "approvalStatus": "APPROVED",
+    "name": "Sporty",
+    "slug": "sporty",
+    "description": "Make a splash, then get some pizza.",
+    "priceRating": 2,
+    "dinerId": "DNR003",
+    "activityId": "ACT003",
+    "adviceId": "ADV003",
+    "createdBy": "Jack"
+  }
+  ]
+}
