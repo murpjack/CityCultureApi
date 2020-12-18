@@ -29,14 +29,14 @@ const options: cors.CorsOptions = {
     ],
     credentials: true,
     methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-    // origin: '*',
-    origin: (origin, callback) => {
-        if (whitelist !== false && whitelist.indexOf(origin) > -1) {
-            callback(null, true)        
-        } else {
-            callback(new Error('Not allowed by CORS'))
-        }
-      },
+    origin: '*',
+    // origin: (origin, callback) => {
+    //     if (whitelist !== false && whitelist.indexOf(origin) > -1) {
+    //         callback(null, true)        
+    //     } else {
+    //         callback(new Error('Not allowed by CORS'))
+    //     }
+    //   },
     preflightContinue: false,
   };
 
