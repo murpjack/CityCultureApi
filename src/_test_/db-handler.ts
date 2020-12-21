@@ -1,6 +1,7 @@
 import fs from "fs";
 import mongoose from "mongoose";
 import mms from "mongodb-memory-server";
+import path from 'path';
 const mongod = new mms.MongoMemoryServer({ instance: {dbName: "test_db"} });
 
 /**
@@ -45,15 +46,15 @@ export const clearDatabase = async () => {
 export const seedDatabase = async () => {
   const collections = Object.keys(mongoose.connection.collections);
   // console.log(2, collections);
-  const path = "./src/seeds/";
-  fs.readdirSync(path)
+  const seedPath = path.resolve(__dirname, 'src', 'seeds');
+  fs.readdirSync(seedPath)
     .map(fileName => {
       // TODO: Use REGEX to find a relative '.seed' file for each collection.
       const fileNameNoExtension = fileName.split(".")[0];
       collections.map(collectionName => {
         if(fileNameNoExtension === collectionName) {
           // Data for seeding
-          const data = fs.readFileSync(`${path}/${fileName}`, {encoding:'utf8'})
+          const data = fs.readFileSync(`${seedPath}/${fileName}`, {encoding:'utf8'})
           if (typeof data === "string") {
             const d = JSON.parse(data).data;           
             mongoose.connection.collections[fileNameNoExtension].insertMany(d, 

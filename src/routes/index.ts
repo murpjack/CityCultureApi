@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from "cors";
-import { OK_ORIGINS } from "../variables";
+// import { OK_ORIGINS } from "../variables";
 export const router = express.Router();
 
 import usersControllers from "../controllers/usersControllers";
@@ -17,7 +17,7 @@ import planControllers from "../controllers/itinerariesControllers";
  * @todo comment this properly.
  */
 
-const whitelist = (OK_ORIGINS !== false) && Object.keys(OK_ORIGINS)?.map((o:string) => OK_ORIGINS[o]);
+// const whitelist = (OK_ORIGINS !== false) && Object.keys(OK_ORIGINS)?.map((o:string) => OK_ORIGINS[o]);
 
 const options: cors.CorsOptions = {
     allowedHeaders: [

@@ -14,7 +14,7 @@ module.exports = {
   
   // devtool: 'false',
 
-  mode: NODE_ENV,
+  // mode: env => env ? env : NODE_ENV,
   
   target: 'node',
  
@@ -26,8 +26,8 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js', '.json'],
   },
-
-  watch: true,
+  // TODO: Create a config that is watched and one NOT watched for Dev/Prod.
+  // watch: true,
   
   module: {
     rules: [

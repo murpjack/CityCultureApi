@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 import * as fs from "fs";
 
-const DB_HOST = process.env.DB_HOST || "";
+// const DB_HOST = process.env.DB_HOST || "";
 // const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 // Connect to MongoDB
-mongoose.connect(DB_HOST)
+mongoose.connect("mongodb://db:27017/culture_db?authSource=admin")
   .then(clearDatabase)
   .then(seedDatabase)
 
