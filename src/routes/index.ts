@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from "cors";
-// import { OK_ORIGINS } from "../variables";
+import { OK_ORIGINS } from "../variables";
 export const router = express.Router();
 
 import usersControllers from "../controllers/usersControllers";
@@ -13,12 +13,12 @@ import planControllers from "../controllers/itinerariesControllers";
  * 
  * Whitelist is stored as a JSON string in env. 
  * 
- * Here we parse it into an object and add to our CORS exceptions. 
+ * Whitelist is parsed into an object and added to our CORS exceptions. 
  * @todo comment this properly.
  */
 
-// const whitelist = (OK_ORIGINS !== false) && Object.keys(OK_ORIGINS)?.map((o:string) => OK_ORIGINS[o]);
-
+const whitelist = (OK_ORIGINS !== false) && Object.keys(OK_ORIGINS)?.map((o:string) => OK_ORIGINS[o]);
+console.log({whitelist})
 const options: cors.CorsOptions = {
     allowedHeaders: [
       'Origin',
@@ -44,45 +44,35 @@ const options: cors.CorsOptions = {
 
 
 // This is a test route!!
-// router.get('/test', async (req, res) => {
-//   res.json({message: 'pass!'})
-// });
+router.get('/test', async (req: any, res: any) => {
+  res.json({message: 'pass!'})
+});
 
-/**
- * Routes for product users.
- */
+/** Routes for product users. */
 router.get("/user/getallusers", usersControllers.getAllUsers);
 router.post("/user/addsingleuser", usersControllers.createUser);
 router.put("/user/updatesingleuser", usersControllers.updateUser);
 router.delete("/user/removesingleuser", usersControllers.deleteUser);
 
-/**
- * Routes for advice.
- */
+/** Routes for advice. */
 router.get("/advice/getalladvice", adviceControllers.getAdvice);
 // router.post("/advice/addadvice", adviceControllers.createAdvice);
 // router.put("/advice/updateadvice/:id", adviceControllers.updateAdvice);
 // router.delete("/advice/removeadvice/:id", adviceControllers.deleteAdvice);
 
-/**
- * Routes for dining.
- */
+/** Routes for dining. */
 router.get("/dining/getallvenues", diningControllers.getDiners);
 // router.post("/dining/addvenue", diningControllers.createDiner);
 // router.put("/dining/updatevenuedetail/:id", diningControllers.updateDiner);
 // router.delete("/dining/removevenue/:id", diningControllers.deleteDiner);
 
-/**
- * Routes for activities.
- */
+/** Routes for activities. */
 router.get("/activities/getallvenues", activitiesControllers.getActivities);
 // router.post("/activities/addvenue", activitiesControllers.createActivity);
 // router.put("/activities/updatevenuedetail/:id", activitiesControllers.updateActivity);
 // router.delete("/activities/removevenue/:id", activitiesControllers.deleteActivity);
 
-/**
- * Routes for itineraries.
- */
+/** Routes for itineraries. */
 router.get("/plan/getallitineraries", planControllers.getPlans);
 // router.post("/plan/additinerary", planControllers.createPlan);
 // router.put("/plan/updatitinerary/:id", planControllers.updatePlan);

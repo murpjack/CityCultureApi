@@ -8,7 +8,7 @@ import {
    } from "./setupControllers";
    
 function aggregateToItineraries (res: any) {
-	// console.log(itineraryModel)
+	/* @TODO: compose */
 	itineraryModel.aggregate([
 	    { $match: { approvalStatus: "APPROVED" } },
 	    { $lookup: { from: 'diners', localField: 'dinerId', foreignField: '_id', as: "diner" } },
@@ -28,15 +28,14 @@ function aggregateToItineraries (res: any) {
 	      }
 	    }
 		])
-		// .exec();
 		.exec((error: any, data: any) => { 
-			// console.log(123,data)
 			if(error) { 
 				return notFound(error) 
 			} else {
 				return res.status(200).json({ success: true, data }) 
 			}  
-		});
+		})
+		// .catch((error: any) => console.log({error}));
 		
 }
 
@@ -135,14 +134,10 @@ function aggregateToItineraries (res: any) {
 // };
 
 export const getPlans = (req: any, res: any) => {
-	// console.log(1, req);
     itineraryModel.find({}, (error: any, data: any) => {
-	console.log(2, {error, data});
-    if (error && !data.length) { 
-		// console.log(3, data);
+    if (error || !data.length) { 
 		return notFound(error)
 	} else {
-		// console.log(4);
 		aggregateToItineraries(res)
 		return;
 	}
