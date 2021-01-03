@@ -8,6 +8,10 @@ services:
       - "3001:3001"
     links:
       - mongo
+    env_file:
+      - .env
+    environment: 
+      - DB_HOST=mongodb://mongo:27017/culture_db
   mongo:
     container_name: mongo
     image: mongo

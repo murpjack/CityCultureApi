@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
 import * as fs from "fs";
+import { DB_HOST_LOCAL } from "../constants";
 
-// const DB_HOST = process.env.DB_HOST || "";
+const DB_HOST = process.env.DB_HOST || DB_HOST_LOCAL;
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 // Connect to MongoDB
-mongoose.connect("mongodb://mongo:27017/culture_db", options)
+mongoose.connect(DB_HOST, options)
   .then(clearDatabase)
   .then(seedDatabase)
 
