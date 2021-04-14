@@ -7,3 +7,7 @@ dist
 npm-debug.log
 
 coverage/
+
+# Just a temporary ignore
+src/_test_
+jest.config.js

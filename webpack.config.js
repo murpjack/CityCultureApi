@@ -27,7 +27,7 @@ module.exports = {
     extensions: ['.ts', '.js', '.json'],
   },
   // TODO: Create a config that is watched and one NOT watched for Dev/Prod.
-  // watch: true,
+  watch: true,
   
   module: {
     rules: [
