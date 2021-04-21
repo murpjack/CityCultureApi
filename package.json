@@ -8,12 +8,9 @@
   "scripts": {
     "build": "webpack --env development",
     "build:deploy": "webpack --env production",
-
     "dev": "cross-env PORT=1234 nodemon src/index.ts",
-
     "start": "cross-env NODE_PATH=./dist PORT=4000 node dist/index.js",
     "start:deploy": "cross-env NODE_PATH=./dist PORT=1234 node dist/index.js"
-    
   },
   "repository": {
     "type": "git",
@@ -47,7 +44,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "4.0.0",
-    "mongodb-memory-server": "6.6.7",
     "ts-loader": "^8.0.11",
     "ts-node": "^9.1.1",
     "typescript": "^4.0.5"
