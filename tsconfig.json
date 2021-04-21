@@ -20,7 +20,7 @@
     },
     "exclude": [
       "node_modules",
-      "_test_",
+      "./src/_test_/**/*",
       "dist",
       "types.ts"
     ]
