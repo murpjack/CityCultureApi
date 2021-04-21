@@ -1,12 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
-const CopyPlugin = require("copy-webpack-plugin");
+// const CopyPlugin = require("copy-webpack-plugin");
 
-
-const NODE_ENV = process.env.NODE_ENV || 'development';
-
-module.exports = {
+const config = env => {
+  return {
 
   entry: './src/index.ts',
 
@@ -14,7 +12,7 @@ module.exports = {
   
   // devtool: 'false',
 
-  // mode: env => env ? env : NODE_ENV,
+  mode: env || "development",
   
   target: 'node',
  
@@ -27,8 +25,7 @@ module.exports = {
     extensions: ['.ts', '.js', '.json'],
   },
   // TODO: Create a config that is watched and one NOT watched for Dev/Prod.
-  watch: true,
-  
+  watch: env === "development",
   module: {
     rules: [
       {
@@ -40,10 +37,12 @@ module.exports = {
     ]
   },
 
-  plugins: [
-    new CopyPlugin([{ 
-          from: path.resolve(__dirname, "src", "seeds"),
-          to: path.resolve(__dirname, "dist", "seeds")
-        }])
-  ]
-};
+  // plugins: [
+  //   new CopyPlugin([{ 
+  //         from: path.resolve(__dirname, "src", "seeds"),
+  //         to: path.resolve(__dirname, "dist", "seeds")
+  //       }])
+  // ]
+}};
+
+module.exports = config;
